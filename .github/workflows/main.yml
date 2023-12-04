@@ -1,0 +1,23 @@
+name: Deploy
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ main ]
+
+
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:       
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        HOST: ${{ secrets.HOST }}
+        username: ${{ secrets.NAME }}
+        key: ${{ SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd /home6/thinksurfmedia/public_html/1callatmservice/
+          git pull https://github.com/1callatmservice/1call.git main
+        
