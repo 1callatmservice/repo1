@@ -16,6 +16,6 @@ jobs:
         username: ${{ secrets.NAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        run:|
+        script: |
         cd /home6/thinksurfmedia/public_html/1callatmservice/
         git pull origin main
