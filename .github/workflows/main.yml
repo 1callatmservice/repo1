@@ -1,21 +1,25 @@
-name: Deploy
+name: Deploy to Web Server
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2  # Use the latest version of actions/checkout
+      uses: actions/checkout@v2
+
+    - name: Deploy using SSH
+      uses: appleboy/ssh-action@master
       with:
-        HOST: ${{ secrets.HOST }}
-        username: ${{ secrets.NAME }}
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-         cd /home6/thinksurfmedia/public_html/1callatmservice/
-         git pull origin main
+          cd /home6/thinksurfmedia/public_html/1callatmservice/
+          git pull origin main
