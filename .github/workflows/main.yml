@@ -16,5 +16,7 @@ jobs:
       - name: Some Action
         uses: some/action@v1
         with:
-          key1: value1
-          key2: value2
+      server: 172.104.62.106
+    username: repo1@repo2.thinksurfmedia.in
+    password: _Q47.s-@hEu!
+    server-dir: /home6/thinksurfmedia/repo2.thinksurfmedia.in/repo1/
