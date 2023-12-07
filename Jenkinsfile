@@ -7,7 +7,7 @@ pipeline{
         stage('Deploy to Remote'){
             steps{
                 
-                 sh 'scp -r ${WORKSPACE}/* thinksurfmedia@${staging_server}:/home6/thinksurfmedia/public_html/'
+                 sh 'scp -o StrictHostKeyChecking=no -r ${WORKSPACE}/pull/* thinksurfmedia@${staging_server}:/home6/thinksurfmedia/public_html/'
                  
             }
         }
