@@ -7,7 +7,7 @@ on:
 
 jobs:
 - name: 📂 Sync files
-        uses: 1callatmservice/repo1@main
+  uses: 1callatmservice/repo1@main
 
     steps:
       - name: Checkout code
