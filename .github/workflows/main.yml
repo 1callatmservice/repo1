@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  your_job_name:
-    runs-on: ubuntu-latest
+- name: 📂 Sync files
+        uses: 1callatmservice/repo1@main
 
     steps:
       - name: Checkout code
