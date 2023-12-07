@@ -12,8 +12,9 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
 
-      - name: 📂 Sync files
-        uses: 1callatmservice/repo1@main
+       - name: 📂 Sync files
+         uses: 1callatmservice/repo1@main/.github/workflows/main.yml
+
         with:
           server: 172.104.62.106
           username: repo1@repo2.thinksurfmedia.in
