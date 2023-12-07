@@ -1,0 +1,21 @@
+name: FTP Test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: 🚀 Deploy website every commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: 📂 Sync files
+        uses: 1callatmservice/repo1@main
+        with:
+          server: 172.104.62.106
+          username: repo1@repo2.thinksurfmedia.in
+          password: _Q47.s-@hEu!
+          server-dir: /home6/thinksurfmedia/repo2.thinksurfmedia.in/repo1/
