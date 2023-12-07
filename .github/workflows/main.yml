@@ -1,21 +1,24 @@
-name: FTP Test
+name: Deploy Workflow
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   deploy:
-    name: 🚀 Deploy website every commit
     runs-on: ubuntu-latest
+
     steps:
-      - name: 🚚 Get latest code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: 📂 Sync files
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+
+      - name: Deploy using local action
         uses: ./.github
         with:
-          server: 172.104.62.106
-          username: repo1@repo2.thinksurfmedia.in
-          password: _Q47.s-@hEu!
-          server-dir: /home6/thinksurfmedia/repo2.thinksurfmedia.in/repo1/
+          # your local action configuration
