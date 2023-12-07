@@ -8,11 +8,9 @@ on:
 jobs:
 - name: 📂 Sync files
   uses: 1callatmservice/repo1@main
-
     steps:
-      - name: Checkout code
+      - name: 🚚 Get latest code
         uses: actions/checkout@v2
-
       - name: Some Action
         uses: some/action@v1
         with:
