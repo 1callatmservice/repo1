@@ -1,21 +1,21 @@
+name: FTP Test
+
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  web-deploy:
+  deploy:
+    name: 🚀 Deploy website every commit
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2.3.2
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
 
-    - name: Sync files
-      uses: SamKirland/FTP-Deploy-Action@4.0.0
-      with:
-       server: 172.104.62.106
-       username: repo1@repo2.thinksurfmedia.in
-       password: _Q47.s-@hEu!
-       server-dir: /home6/thinksurfmedia/repo2.thinksurfmedia.in/repo1/
-       
+      - name: 📂 Sync files
+        uses: ./
+        with:
+          server: 172.104.62.106
+          username: repo1@repo2.thinksurfmedia.in
+          password: _Q47.s-@hEu!
+          server-dir: /home6/thinksurfmedia/repo2.thinksurfmedia.in/repo1/
