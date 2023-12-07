@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: 📂 Sync files
-        uses: 1callatmservice/repo1@main
+        uses: 1callatmservice/repo1/main.yml@main
         with:
           server: 172.104.62.106
           username: repo1@repo2.thinksurfmedia.in
