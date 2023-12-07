@@ -1,4 +1,4 @@
-name: Deploy Workflow
+name: Your Workflow Name
 
 on:
   push:
@@ -6,19 +6,15 @@ on:
       - main
 
 jobs:
-  deploy:
+  your_job_name:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Some Action
+        uses: some/action@v1
         with:
-          node-version: '16'
-
-      - name: Deploy using local action
-        uses: ./.github
-        with:
-          # your local action configuration
+          key1: value1
+          key2: value2
